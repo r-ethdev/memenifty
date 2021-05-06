@@ -31,9 +31,16 @@ contract MemeFactory is MintERC1155, Ownable {
     uint256 MULTIPLE_MEME_OPTION = 1;
     uint256 NUM_MEMES_IN_MULTIPLE_MEME_OPTION = 3;
 
+    // Constructor initializes variables from source files
     constructor(address _proxyRegistryAddress, address _nftAddress) public {
+
+        // Variable from ERC1155Tradable.sol
         proxyRegistryAddress = _proxyRegistryAddress;
+
+        // Variable from MemeFactory.sol (this file)
         nftAddress = _nftAddress;
+
+        // Variable from CreatureLootBox.sol (we probably don't need)
         lootBoxNftAddress = address(
             new CreatureLootBox(_proxyRegistryAddress, address(this))
         );
