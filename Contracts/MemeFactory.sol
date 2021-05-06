@@ -1,12 +1,12 @@
 pragma solidity ^0.5.0;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "./IFactoryERC721.sol";
-import "./Creature.sol";
+import "./MintERC1155.sol";
+import "./Memes.sol";
 import "./CreatureLootBox.sol";
 import "./Strings.sol";
 
-contract CreatureFactory is FactoryERC721, Ownable {
+contract MemeFactory is MintERC1155, Ownable {
     using Strings for string;
 
     event Transfer(
@@ -18,21 +18,18 @@ contract CreatureFactory is FactoryERC721, Ownable {
     address public proxyRegistryAddress;
     address public nftAddress;
     address public lootBoxNftAddress;
-    string public baseURI = "https://creatures-api.opensea.io/api/factory/";
+    string public baseURI = "https://creatures-api.opensea.io/api/factory/";    // NEED OUR OWN URI
 
-    /**
-     * Enforce the existence of only 100 OpenSea creatures.
-     */
+    // Do we want to limit the amount of total NFTs to mint?
     uint256 CREATURE_SUPPLY = 100;
 
     /**
-     * Three different options for minting Creatures (basic, premium, and gold).
+     * Three different options for minting memes (basic, premium, and gold).
      */
-    uint256 NUM_OPTIONS = 3;
-    uint256 SINGLE_CREATURE_OPTION = 0;
-    uint256 MULTIPLE_CREATURE_OPTION = 1;
-    uint256 LOOTBOX_OPTION = 2;
-    uint256 NUM_CREATURES_IN_MULTIPLE_CREATURE_OPTION = 4;
+    uint256 NUM_OPTIONS = 2;
+    uint256 SINGLE_MEME_OPTION = 0;
+    uint256 MULTIPLE_MEME_OPTION = 1;
+    uint256 NUM_MEMES_IN_MULTIPLE_MEME_OPTION = 3;
 
     constructor(address _proxyRegistryAddress, address _nftAddress) public {
         proxyRegistryAddress = _proxyRegistryAddress;
