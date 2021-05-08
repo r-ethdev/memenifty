@@ -5,6 +5,7 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
 
 	useEffect(()=>{
+		console.log("Setting drawBreakingText")
 		CanvasRenderingContext2D.prototype.drawBreakingText = function (str, x, y, w, lh, method) {
 		// local variables and defaults
 		var textSize = parseInt(this.font.replace(/\D/gi, ''));
