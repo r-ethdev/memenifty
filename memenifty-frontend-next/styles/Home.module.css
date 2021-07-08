@@ -9,12 +9,12 @@
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 10rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: normal;
 }
 
 .button {

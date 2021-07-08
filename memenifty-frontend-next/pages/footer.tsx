@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Footer extends React.Component {
   render() {
     return (
-      <div>
+      <footer>
         <nav className="navbar navbar-expand navbar-dark fixed-bottom bg-dark flex-md-nowrap p-3 border border-secondary rounded-top">
           <ul class="d-flex mx-auto my-auto">
                 <li class="nav-item p-3 d-flex">
@@ -36,7 +36,7 @@ class Footer extends React.Component {
                 </li>
             </ul>
           </nav>
-        </div>
+        </footer>
     )
   }
 }
